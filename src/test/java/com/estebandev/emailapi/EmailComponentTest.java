@@ -19,12 +19,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.test.context.ActiveProfiles;
 
 import com.estebandev.emailapi.config.MailConfig;
 import com.estebandev.emailapi.controller.dto.EmailDTO;
 import com.estebandev.emailapi.service.EmailComponent;
 
 @ExtendWith(MockitoExtension.class)
+@ActiveProfiles("test")
 class EmailComponentTest {
     private String from = "test@spring.com";
 
@@ -71,9 +73,6 @@ class EmailComponentTest {
         // Arrange
         MimeMessage mimeMessage = mock(MimeMessage.class);
         when(javaMailSender.createMimeMessage()).thenReturn(mimeMessage);
-
-        String senderName = "Test Sender";
-        String senderEmail = "test@sender.com";
         String recipientEmail = "recipient@test.com";
         String subject = "Test Subject";
         String body = "<h1>Test Message</h1>";

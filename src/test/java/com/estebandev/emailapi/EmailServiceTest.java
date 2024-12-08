@@ -10,6 +10,7 @@ import java.io.UnsupportedEncodingException;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mail.MailException;
+import org.springframework.test.context.ActiveProfiles;
 
 import com.estebandev.emailapi.controller.dto.EmailDTO;
 import com.estebandev.emailapi.service.EmailComponent;
@@ -21,6 +22,7 @@ import jakarta.mail.MessagingException;
  * EmailServiceTest
  */
 @ExtendWith(MockitoExtension.class)
+@ActiveProfiles("test")
 public class EmailServiceTest {
 
     @Mock
