@@ -1,5 +1,7 @@
 package com.estebandev.emailapi.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+
 /**
  * SecurityConfig
  */
@@ -25,8 +28,12 @@ public class SecurityConfig {
     @Value("${var.password}")
     private String password;
 
+    Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        logger.info(String.format("Security parameters: user: %s password: %s", username, password));
+
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authz -> authz.requestMatchers("/").permitAll().anyRequest().authenticated())

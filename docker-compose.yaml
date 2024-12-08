@@ -1,0 +1,12 @@
+services:
+  mail_api:
+    image: openjdk:17-jdk-slim
+    container_name: mail_api
+    working_dir: /app
+    volumes:
+      - ./target:/app
+    entrypoint: ["java", "-jar", "emailapi-0.0.1-SNAPSHOT.jar"]
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
