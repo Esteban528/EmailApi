@@ -23,6 +23,8 @@ Make sure you have the following dependencies installed:
 ### Install
 ```bash
 curl -sSL https://raw.githubusercontent.com/Esteban528/EmailApi/refs/heads/main/install.sh | bash
+
+cd ~/EmailApiSpring
 ```
 
 ## Settings
