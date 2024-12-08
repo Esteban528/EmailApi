@@ -29,3 +29,25 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      with:
+        tag_name: ${{ github.ref }} 
+        release_name: Release ${{ github.ref }}
+        body: 'Latest release'
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload JAR to GitHub Release
+      uses: actions/upload-release-asset@v1
+      with:
+        url: ${{ steps.create_release.outputs.upload_url }}  
+        asset_path: target/emailapi-0.0.1-SNAPSHOT.jar
+        asset_name: emailapi-0.0.1-SNAPSHOT.jar
+        asset_content_type: application/java-archive
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
