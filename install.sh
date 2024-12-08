@@ -28,7 +28,7 @@ else
     echo "Docker is installed."
 fi
 
-if ! command -v docker-compose &> /dev/null; then
+if ! command -v docker compose &> /dev/null; then
     echo "Docker Compose is not installed. Installing Docker Compose..."
     echo "Docker Compose not found. Aborting."
     exit 1
