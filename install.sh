@@ -2,7 +2,7 @@
 
 DIR_NAME="EmailApiSpring"
 DIR_PATH="$HOME/$DIR_NAME"
-JAR_URL="https://github.com/Esteban528/EmailApi/releases/download/stable/emailapi-0.0.1-SNAPSHOT.jar"
+JAR_URL="https://github.com/Esteban528/EmailApi/releases/download/oficial/emailapi-0.0.1-SNAPSHOT.jar"
 COMPOSE_URL="https://raw.githubusercontent.com/Esteban528/EmailApi/refs/heads/main/docker-compose.yaml"
 ENV_TEMPLATE="https://raw.githubusercontent.com/Esteban528/EmailApi/refs/heads/main/.env-template"
 
