@@ -1,6 +1,7 @@
 services:
   mail_api:
     image: openjdk:17-jdk-slim
+    restart: unless-stopped    
     container_name: mail_api
     working_dir: /app
     volumes:
