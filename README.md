@@ -33,6 +33,7 @@ Create a `.env` file in the project directory.
 ```.env
 AUTH_USERNAME=user
 AUTH_PASSWORD=pass
+PORT=8080
 EMAIL_HOST=smtp.example.com
 EMAIL_PORT=587
 EMAIL_SENDER_NAME=Example Sender
