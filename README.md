@@ -111,11 +111,11 @@ This API allows sending emails using Spring Boot. It uses HTTP Basic Authenticat
 ### 6. Example usage with cURL
 
 ```bash
-curl -X POST -u user:password -H "Content-Type: application/json" -d '{
-  "email": "recipient@example.com",
-  "subject": "Email Test",
-  "message": "This is a test message."
-}' http://localhost:8080/email/send
+curl -X POST -u user:password -H "Content-Type: application/json" -d '{ \
+  "email": "recipient@example.com", \
+  "subject": "Email Test", \
+  "message": "This is a test message." \
+}' http://localhost:8080/email/send 
 ```
 
 **Note:** Replace `user` and `password` with the configured credentials and `http://localhost:8080` with the correct URL of your application.
